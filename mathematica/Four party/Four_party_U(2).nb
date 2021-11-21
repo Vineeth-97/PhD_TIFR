@@ -1,0 +1,184 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5698,        176]
+NotebookOptionsPosition[      5353,        162]
+NotebookOutlinePosition[      5744,        178]
+CellTagsIndexPosition[      5701,        175]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Chi]", "[", 
+    RowBox[{
+    "t_", ",", "a1_", ",", "a2_", ",", "b1_", ",", "b2_", ",", "c1_", ",", 
+     "c2_", ",", "d1_", ",", "d2_"}], "]"}], ":=", " ", 
+   RowBox[{"t", 
+    RowBox[{"(", 
+     RowBox[{"a1", "+", "a2"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"b1", "+", "b2"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"c1", "+", "c2"}], ")"}], 
+    RowBox[{"(", 
+     RowBox[{"d1", "+", "d2"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PE", " ", "=", " ", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"Sum", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"\[Chi]", "[", 
+         RowBox[{
+          SuperscriptBox["t", "r"], ",", 
+          SuperscriptBox["a1", "r"], ",", 
+          SuperscriptBox["a2", "r"], ",", 
+          SuperscriptBox["b1", "r"], ",", 
+          SuperscriptBox["b2", "r"], ",", 
+          SuperscriptBox["c1", "r"], ",", 
+          SuperscriptBox["c2", "r"], ",", 
+          SuperscriptBox["d1", "r"], ",", 
+          SuperscriptBox["d2", "r"]}], "]"}], "/", "r"}], "+", 
+       RowBox[{
+        RowBox[{"\[Chi]", "[", 
+         RowBox[{
+          SuperscriptBox["t", "r"], ",", 
+          SuperscriptBox["a1", 
+           RowBox[{"-", "r"}]], ",", 
+          SuperscriptBox["a2", 
+           RowBox[{"-", "r"}]], ",", 
+          SuperscriptBox["b1", 
+           RowBox[{"-", "r"}]], ",", 
+          SuperscriptBox["b2", 
+           RowBox[{"-", "r"}]], ",", 
+          SuperscriptBox["c1", 
+           RowBox[{"-", "r"}]], ",", 
+          SuperscriptBox["c2", 
+           RowBox[{"-", "r"}]], ",", 
+          SuperscriptBox["d1", 
+           RowBox[{"-", "r"}]], ",", 
+          SuperscriptBox["d2", 
+           RowBox[{"-", "r"}]]}], "]"}], "/", "r"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Int", " ", "=", " ", 
+   RowBox[{"PE", "*", 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox["a1", 
+       RowBox[{"-", "1"}]], "*", 
+      SuperscriptBox["a2", 
+       RowBox[{"-", "1"}]], "*", 
+      SuperscriptBox["b1", 
+       RowBox[{"-", "1"}]], "*", 
+      SuperscriptBox["b2", 
+       RowBox[{"-", "1"}]], "*", 
+      SuperscriptBox["c1", 
+       RowBox[{"-", "1"}]], "*", 
+      SuperscriptBox["c2", 
+       RowBox[{"-", "1"}]], "*", 
+      SuperscriptBox["d1", 
+       RowBox[{"-", "1"}]], "*", 
+      SuperscriptBox["d2", 
+       RowBox[{"-", "1"}]]}], ")"}], "*", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"a1", "/", "a2"}]}], ")"}], "*", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"b1", "/", "b2"}]}], ")"}], "*", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"c1", "/", "c2"}]}], ")"}], "*", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"d1", "/", "d2"}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", " ", "=", " ", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{"Int", ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "8"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ans", " ", "=", " ", 
+   RowBox[{"Residue", "[", 
+    RowBox[{
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"Residue", "[", 
+        RowBox[{
+         RowBox[{"Residue", "[", 
+          RowBox[{
+           RowBox[{"Residue", "[", 
+            RowBox[{
+             RowBox[{"Residue", "[", 
+              RowBox[{
+               RowBox[{"Residue", "[", 
+                RowBox[{
+                 RowBox[{"Residue", "[", 
+                  RowBox[{"Int", ",", 
+                   RowBox[{"{", 
+                    RowBox[{"a1", ",", "0"}], "}"}]}], "]"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"a2", ",", "0"}], "}"}]}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"b1", ",", "0"}], "}"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"b2", ",", "0"}], "}"}]}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"c1", ",", "0"}], "}"}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"c2", ",", "0"}], "}"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"d1", ",", "0"}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"d2", ",", "0"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", "ans", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ans", ">>", "output", " "}]}], "Input",
+ CellChangeTimes->{{3.84525733122138*^9, 3.845257343093157*^9}, {
+  3.845338652138122*^9, 3.845338654775771*^9}, {3.846128370656948*^9, 
+  3.846128404931779*^9}, {3.8461301028375483`*^9, 3.846130119479288*^9}, {
+  3.8461332462429*^9, 
+  3.846133253686152*^9}},ExpressionUUID->"25cf76f3-6691-4956-8217-\
+67acbf5e004d"]
+},
+WindowSize->{1440, 847},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.3 for Mac OS X ARM (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6fe93ceb-86d9-4728-875a-562636e27beb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4791, 140, 161, "Input",ExpressionUUID->"25cf76f3-6691-4956-8217-67acbf5e004d"]
+}
+]
+*)
+
